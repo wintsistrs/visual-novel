@@ -1,0 +1,246 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #050507;
+    overflow: hidden;
+  }
+  
+  .main-menu {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  
+    background-image: url("../assets/backgrounds/menu-background.png");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-color: #050507;
+  }
+  
+
+  .menu-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.48) 26%,
+      rgba(0, 0, 0, 0.10) 58%,
+      rgba(0, 0, 0, 0.20) 100%
+    );
+    z-index: 1;
+  }
+  
+  .menu-panel {
+    position: relative;
+    z-index: 2;
+  
+    width: 360px;
+    height: 100%;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 55px;
+  }
+  
+  /* іконка / назва гри */
+  .game-logo {
+    position: relative;
+    width: 350px;
+    max-width: 100%;
+    margin-bottom: 35px;
+  
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.25));
+  }
+  
+  /* блок кнопок */
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 240px;
+    
+  }
+
+  .menu-btn {
+    width: 100%;
+    padding: 14px 22px;
+  
+    border: 1px solid rgba(230, 230, 230, 0.65);
+    background: rgba(10, 10, 14, 0.58);
+  
+    color: #f2f2f2;
+    font-size: 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  
+    cursor: pointer;
+  
+    backdrop-filter: blur(4px);
+    box-shadow:
+      0 0 12px rgba(255, 255, 255, 0.08),
+      inset 0 0 12px rgba(255, 255, 255, 0.05);
+  
+    transition: 0.25s ease;
+  }
+
+   .menu-btn::before {
+    content: "";
+    position: absolute;
+     left: 50%;
+  top: -30px;
+
+  width: 100%;
+  height: 60px;
+
+  transform: translateX(-50%);
+
+  background-image: url("/assets/ui/button-border.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  pointer-events: none;
+
+  opacity: 0.9;
+
+  filter:
+    drop-shadow(0 0 5px rgba(255, 255, 255, 0.35))
+    drop-shadow(0 0 10px rgba(0, 0, 0, 0.85));
+   }
+  
+  .menu-btn:hover {
+    color: #ffffff;
+    background: rgba(185, 185, 185, 0.18);
+    border-color: #ffffff;
+  
+    transform: translateX(8px);
+  
+    box-shadow:
+      0 0 18px rgba(255, 255, 255, 0.25),
+      inset 0 0 15px rgba(255, 255, 255, 0.10);
+  }
+  
+  .menu-btn:active {
+    transform: translateX(8px) scale(0.97);
+  }
+  
+  /* модальне вікно налаштувань */
+  .settings-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+  
+    display: none;
+    justify-content: center;
+    align-items: center;
+  
+    background: rgba(0, 0, 0, 0.65);
+  }
+  
+  .settings-modal.active {
+    display: flex;
+  }
+  
+  .settings-box {
+    width: 360px;
+    padding: 30px;
+  
+    background: rgba(12, 12, 18, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+  
+    color: white;
+    text-align: center;
+  
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
+  }
+  
+  .settings-box h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: normal;
+  }
+  
+  .setting-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    margin-bottom: 25px;
+  
+    font-size: 17px;
+  }
+  
+  .setting-row input {
+    width: 100%;
+  }
+  
+  .small-btn {
+    width: 180px;
+    margin: 0 auto;
+    font-size: 16px;
+  }
+  
+  /* адаптивність */
+  @media (max-width:768px) {
+    .main-menu {
+      background-image: url("../assets/backgrounds/menu-bg-middle.png");
+    }
+    
+  }
+
+  @media (max-width: 667px) {
+     .menu-panel {
+      width: 100%;
+      padding-left: 0;
+      padding-bottom: 70px;
+            justify-content: flex-end;
+
+    }
+    .menu-buttons {
+      display: flex;
+
+    }
+
+    .game-logo {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .main-menu {
+      background-position: center;
+      background-image: url("../assets/backgrounds/menu-bg-small.png");
+
+    }
+  
+    .menu-overlay {
+      background: rgba(0, 0, 0, 0.55);
+    }
+  
+    .game-logo {
+      width: 280px;
+      margin-bottom: 25px;
+       
+    }
+  
+    .menu-buttons {
+      width: 230px;
+    }
+  
+    .menu-btn {
+      font-size: 17px;
+      padding: 13px 18px;
+    }
+  }
+  
