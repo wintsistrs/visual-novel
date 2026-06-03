@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Тінь над Еларією</title>
+
+  <link rel="stylesheet" href="/css/game.css">
+</head>
+<body>
+
+  <main id="gameScreen" class="game-screen">
+
+    <div id="sceneBg" class="scene-bg"></div>
+
+    <div class="scene-darken"></div>
+
+    <img id="characterImg" class="character-img" src="" alt="Персонаж">
+
+    <section class="dialog-box">
+      <div id="characterName" class="character-name"></div>
+
+      <p id="dialogText" class="dialog-text"></p>
+
+      <div id="choicesBox" class="choices-box"></div>
+
+      <button id="nextBtn" class="next-btn">Далі</button>
+      <button id="musicToggle" class="music-toggle">🔇</button>
+
+    </section>
+  </main>
+      <audio id="bgMusic" src="/assets/audio/maintheme.mp3" loop preload="auto"></audio>
+  <script src="/js/scenes.js"></script>
+  <script src="/js/game.js"></script>
+</body>
+</html>

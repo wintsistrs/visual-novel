@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+
+  <main class="main-menu">
+
+    <div class="menu-overlay"></div>
+
+    <section class="menu-panel">
+
+      <img 
+        src="/assets/ui/name-icon.svg" 
+        alt="Тінь над Еларією" 
+        class="game-logo"
+      >
+
+      <nav class="menu-buttons">
+        <button class="menu-btn" id="newGameBtn">Нова гра</button>
+        <button class="menu-btn" id="continueBtn">Продовжити</button>
+        <button class="menu-btn" id="settingsBtn">Налаштування</button>
+      </nav>
+
+    </section>
+
+    <div class="settings-modal" id="settingsModal">
+      <div class="settings-box">
+        <h2>Налаштування</h2>
+
+        <label class="setting-row">
+          <span>Гучність музики</span>
+          <input type="range" min="0" max="100" value="60">
+        </label>
+
+        <button class="menu-btn small-btn" id="closeSettingsBtn">Закрити</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="/js/menu.js"></script>
+</body>
+</html>
